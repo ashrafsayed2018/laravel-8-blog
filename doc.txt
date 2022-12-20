@@ -15,6 +15,8 @@
 - in the head section of base layout
   * add meta tags for social
     - facebook
+
+
 - landing page
 - category
    * dashboard
@@ -22,4 +24,14 @@
      - create
    * routes
    * methods & jobs
+
+
+- update dashboard routes in nav bar
+- add nav slot in app.layout for categories dashboard
+- create table for index view for categories
+- create view in order to create categories
+- store method in categories
+- edit view in categories
+- update & delete methods in categories
+- include alerts as soon as category created or updated or deleted
 
