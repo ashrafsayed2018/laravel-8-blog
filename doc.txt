@@ -1,0 +1,17 @@
+- add subscribers model and migration for newsletter subscription
+- create migration schema for all migrations
+- allow sub categories
+- add extra useful methods in models
+
+
+- check to see tables that migrated
+- create HomeController with view and routes
+- create base layout components
+  * partial components
+    - head
+    - footer
+    - nav
+    - alerts
+- in the head section of base layout
+  * add meta tags for social
+    - facebook
