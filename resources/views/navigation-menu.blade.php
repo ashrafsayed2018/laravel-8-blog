@@ -11,9 +11,28 @@
                 </div>
 
                 <!-- Navigation Links -->
+                {{-- Dashboard --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('لوحة التحكم') }}
+                    </x-jet-nav-link>
+                </div>
+                {{-- Cateogries --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('categories')">
+                        {{ __('الاقسام') }}
+                    </x-jet-nav-link>
+                </div>
+                {{-- Tags --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('tags')">
+                        {{ __('التاجات') }}
+                    </x-jet-nav-link>
+                </div>
+                {{-- Posts --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('posts')">
+                        {{ __('المقالات') }}
                     </x-jet-nav-link>
                 </div>
             </div>
