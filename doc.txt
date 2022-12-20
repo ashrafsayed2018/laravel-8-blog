@@ -15,3 +15,11 @@
 - in the head section of base layout
   * add meta tags for social
     - facebook
+- landing page
+- category
+   * dashboard
+     - index
+     - create
+   * routes
+   * methods & jobs
+
