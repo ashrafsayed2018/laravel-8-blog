@@ -15,5 +15,7 @@
 @livewireStyles
 
 <!-- Scripts -->
+<script src="{{ asset("js/main.js") }}" defer></script>
+<script src="{{ asset("js/drop-down.js") }}" defer></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <title>@yield('title', 'Blog')</title>
