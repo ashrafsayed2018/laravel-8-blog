@@ -3,7 +3,7 @@
     <head>
       <x-partials.head />
     </head>
-    <body>
+    <body class="leading-normal tracking-normal text-white gradient" >
         <x-partials.nav />
         <x-ui.alerts />
         <div class="font-sans text-gray-900 antialiased">
