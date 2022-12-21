@@ -28,6 +28,7 @@
                            <small class="block font-medium text-sm text-gray-700 mb-4">اختر قسم رئيسي للاقسام الفرعيه فقط </small>
                            <select name="parent_id" class="w-full mb-6 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                <option value="">اختر القسم الرئيسي</option>
+
                            </select>
                         </div>
 
@@ -35,7 +36,7 @@
                         <div>
                             <x-jet-label for="name" value="{{ __('الاسم') }}" class="mb-4 text-gray-500" />
                             <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus autocomplete="name" />
-                            <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 30 حرف </span>
+                            <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
                             <x-jet-input-error for="name" class="mt-2" />
                         </div>
 
