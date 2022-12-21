@@ -34,8 +34,8 @@
 
                         <div>
                             <x-jet-label for="name" value="{{ __('الاسم') }}" class="mb-4 text-gray-500" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                            <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 20 حرف </span>
+                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus autocomplete="name" />
+                            <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 30 حرف </span>
                             <x-jet-input-error for="name" class="mt-2" />
                         </div>
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -33,9 +35,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        $category            = new Category();
+        $category->parent_id = $request->parent_id;
+        $category->name      = $request->name;
+        $category->slug      = Str::slug($request->name);
+        $category->save();
+        return redirect()->route('categories.index')->with("success", "تم اضافة القسم بنحاج");
     }
 
     /**
