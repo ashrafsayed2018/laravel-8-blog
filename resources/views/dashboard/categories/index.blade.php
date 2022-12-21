@@ -59,13 +59,16 @@
                         </td>
                         <td class="px-2 py-4 whitespace-nowrap">
                             <ul class="flex">
+                                [
                                 @foreach ($category->subCategories as $subCategory )
 
                                  <li>
                                     {{ $subCategory->name }}
                                  </li>
-
+                                ,
                                 @endforeach
+
+                                ]
                             </ul>
                         </td>
                         <td class="px-2 py-4 whitespace-nowrap">

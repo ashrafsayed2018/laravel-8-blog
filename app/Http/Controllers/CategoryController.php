@@ -31,7 +31,8 @@ class CategoryController extends Controller
 
 
         return view("dashboard.categories.create", [
-            'categories' => category::all(),
+            'categories' => Category::with("subCategories")->whereNull("parent_id")->get()
+
         ]);
     }
 

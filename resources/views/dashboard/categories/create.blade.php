@@ -28,7 +28,9 @@
                            <small class="block font-medium text-sm text-gray-700 mb-4">اختر قسم رئيسي للاقسام الفرعيه فقط </small>
                            <select name="parent_id" class="w-full mb-6 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                <option value="">اختر القسم الرئيسي</option>
-
+                               @foreach ($categories as $category)
+                               <option value="{{ $category->id }}">{{ $category->name }}</option>
+                               @endforeach
                            </select>
                         </div>
 
