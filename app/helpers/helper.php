@@ -1,6 +1,7 @@
-<!-- arabic slug method -->
+
 <?php
 
+// arabic slug method
 function make_slug($string = null, $separator = "-")
 {
     if (is_null($string)) {

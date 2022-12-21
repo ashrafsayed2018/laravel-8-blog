@@ -34,6 +34,9 @@
                             الاسم
                         </th>
                         <th class="px-2 py-3 text-xs tracking-wide text-right">
+                            النوع
+                        </th>
+                        <th class="px-2 py-3 text-xs tracking-wide text-right">
                             القسم الفرعي
                         </th>
                         <th class="px-2 py-3 text-xs tracking-wide text-right">
@@ -56,6 +59,13 @@
                         </td>
                         <td class="px-2 py-4 whitespace-nowrap">
                             {{ $category->name }}
+                        </td>
+                        <td class="px-2 py-4 whitespace-nowrap">
+                            @if ($category->parent_id == NULL)
+                              <span class="text-green-500 font-semibold">قسم رئيسي</span>
+                            @else
+                              <span class="text-red-500 font-semibold">قسم فرعي</span>
+                            @endif
                         </td>
                         <td class="px-2 py-4 whitespace-nowrap">
                             <ul class="flex">

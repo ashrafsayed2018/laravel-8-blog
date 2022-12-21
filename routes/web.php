@@ -34,7 +34,7 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
         Route::post("/", [CategoryController::class, "store"])->name("store");
         Route::get("{category:slug}/edit", [CategoryController::class, "edit"])->name("edit");
         Route::put("{category:slug}/update", [CategoryController::class, "update"])->name("update");
-        Route::delete("{category:slug}/delete", [CategoryController::class, "delete"])->name("delete");
+        Route::delete("{category:slug}/delete", [CategoryController::class, "destroy"])->name("delete");
     });
 });
 
