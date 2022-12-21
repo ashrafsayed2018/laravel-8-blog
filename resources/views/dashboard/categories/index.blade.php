@@ -6,19 +6,15 @@
     </x-slot>
 
     <x-slot name="nav">
-    <div class="space-x-4">
-            {{-- <x-jet-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
-                {{ __('الاقسام') }}
-            </x-jet-nav-link> --}}
+        <div class="space-x-4">
+                <x-jet-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
+                    {{ __('الاقسام') }}
+                </x-jet-nav-link>
 
-            <x-jet-nav-link href="{{ route('categories.create') }}" :active="request()->routeIs('categories.create')">
-
-                <button type="button" class="bg-green-500 text-white px-3 py-2 rounded-md shadow-md shadow-green-500">
+                <x-jet-nav-link href="{{ route('categories.create') }}" :active="request()->routeIs('categories.create')">
                     {{ __('اضافة قسم') }}
-
-                </button>
-            </x-jet-nav-link>
-    </div>
+                </x-jet-nav-link>
+        </div>
     </x-slot>
 
     <div class="py-12">
