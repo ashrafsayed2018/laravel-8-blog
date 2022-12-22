@@ -23,7 +23,7 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                <div class="p-4">
-                    <form action="{{ route("tags.update", $category) }}" method="POST">
+                    <form action="{{ route("tags.update", $tag) }}" method="POST">
                         @csrf
                         @method("put")
                         <div>
