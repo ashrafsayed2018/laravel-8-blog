@@ -96,7 +96,7 @@
                 </tbody>
               </table>
               @else
-                 <div class="p-2 text-white text-center font-bold bg-red-500 rounded">لا توجد اقسام </div>
+                 <div class="p-2 text-white text-center font-bold bg-red-500 rounded">لا توجد تاجات  </div>
               @endif
             </div>
         </div>
