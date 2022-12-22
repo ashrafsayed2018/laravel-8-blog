@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TagRequest;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Http\Requests\TagRequest;
 
 class TagController extends Controller
 {
@@ -46,16 +47,6 @@ class TagController extends Controller
         return redirect()->route("tags.index")->with("success", "تم اضافة تاج بنجاح");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tag $tag)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -65,7 +56,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+        return view("dashboard.tags.edit", compact("tag"));
     }
 
     /**
@@ -77,7 +68,18 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+
+        $validated = $this->validate($request, [
+            'name' => ['required', "min:5", "max:50",   Rule::unique('tags')->ignore($tag->id),],
+            'parent_id' => ['sometimes', 'nullable', 'numeric']
+        ]);
+        $tag->name = $request->name;
+        $tag->slug = make_slug($request->name);
+
+
+        $tag->save();
+
+        return redirect()->route('tags.index')->with("success", "تم تحديث التاج بنجاح");
     }
 
     /**
