@@ -26,6 +26,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-auto shadow-xl sm:rounded-lg">
               {{-- table for index the categories --}}
+              @if ($categories->count() > 0)
               <table class="w-full divide-y divide-gray-200">
                 <thead class="font-bold text-gray-500 bg-indigo-200">
                     <tr>
@@ -121,6 +122,9 @@
                     @endforeach
                 </tbody>
               </table>
+              @else
+                 <div class="p-2 text-white text-center font-bold bg-red-500 rounded">لا توجد اقسام </div>
+              @endif
             </div>
         </div>
     </div>

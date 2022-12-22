@@ -39,3 +39,8 @@
   - remove after 3 seconds
   - success and errors
 
+- create TagController
+- tag routes
+- tag views
+- tag methods
+
