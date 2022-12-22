@@ -35,3 +35,7 @@
 - update & delete methods in categories
 - include alerts as soon as category created or updated or deleted
 
+- create alert for sessions
+  - remove after 3 seconds
+  - success and errors
+

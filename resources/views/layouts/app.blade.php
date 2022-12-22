@@ -14,7 +14,10 @@
         @livewireStyles
 
         <!-- Scripts -->
+        <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+
         <script src="{{ asset('js/app.js') }}" defer></script>
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

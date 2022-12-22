@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $category->name      = $request->name;
         $category->slug      = make_slug($request->name);
         $category->save();
-        return redirect()->route('categories.index')->with("success", "تم اضافة القسم بنحاج");
+        return redirect()->route('categories.index')->with("success", "تم اضافة القسم بنجاح");
     }
 
 
@@ -88,7 +88,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return redirect()->route('categories.index')->with("success", "تم تحديث القسم بنحاج");
+        return redirect()->route('categories.index')->with("success", "تم تحديث القسم بنجاح");
     }
 
     /**
@@ -101,6 +101,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('categories.index')->with("success", "تم حذف القسم بنحاج");
+        return redirect()->route('categories.index')->with("success", "تم حذف القسم بنجاح");
     }
 }

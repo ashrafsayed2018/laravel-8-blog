@@ -17,9 +17,11 @@
         </div>
     </x-slot>
 
+
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-white overflow-auto shadow-xl sm:rounded-lg">
               {{-- table for index the categories --}}
               <table class="w-full divide-y divide-gray-200">
                 <thead class="font-bold text-gray-500 bg-indigo-200">
@@ -51,11 +53,13 @@
                     </tr>
                 </thead>
                 <tbody class="text-xs divide-y divide-gray-200 bg-indigo-50">
+
+                    <?php $i = 1; ?>
                     @foreach ($categories as $category)
                     <tr>
                         <td></td>
                         <td class="px-2 py-4 whitespace-nowrap">
-                            {{ $category->id }}
+                            {{ $i++}}
                         </td>
                         <td class="px-2 py-4 whitespace-nowrap">
                             {{ $category->name }}
