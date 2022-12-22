@@ -40,7 +40,7 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
 
 
     // tag route
-    Route::group(["prefix" => "categories", "as" => "categories."], function () {
+    Route::group(["prefix" => "tags", "as" => "tags."], function () {
         Route::get("/", [TagController::class, "index"])->name("index");
         Route::get("create", [TagController::class, "create"])->name("create");
         Route::post("/", [TagController::class, "store"])->name("store");
