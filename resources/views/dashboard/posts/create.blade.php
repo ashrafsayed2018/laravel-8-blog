@@ -23,11 +23,20 @@
                <div class="p-4">
                     <form action="{{ route("posts.store") }}" method="POST">
                         @csrf
+                        {{-- title --}}
                         <div>
-                            <x-jet-label for="name" value="{{ __('الاسم') }}" class="mb-4 text-gray-500" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus autocomplete="name" />
+                            <x-jet-label for="title" value="{{ __('العنوان') }}" class="mb-4 text-gray-500" />
+                            <x-jet-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')"  autofocus autocomplete="title" />
                             <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
-                            <x-jet-input-error for="name" class="mt-2" />
+                            <x-jet-input-error for="title" class="mt-2" />
+                        </div>
+
+                        {{-- body --}}
+
+                        <div class="mt-4">
+                            <x-jet-label for="body" value="{{ __('الوصف') }}" class="mb-4 text-gray-500" />
+                            <x-trix name="body" styling="" value=""></x-trix>
+                            <x-jet-input-error for="body" class="mt-2" />
                         </div>
 
                         <x-jet-button class="ml-4 mt-6">
