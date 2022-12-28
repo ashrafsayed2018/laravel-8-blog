@@ -92,7 +92,7 @@
 
                         </td>
                     </tr>
-                    @endforeach
+                    @endforeachp
                 </tbody>
               </table>
               @else

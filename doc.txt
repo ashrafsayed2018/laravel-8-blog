@@ -44,3 +44,8 @@
 - tag views
 - tag methods
 
+- create PostController
+- post routes
+- post view
+
+
