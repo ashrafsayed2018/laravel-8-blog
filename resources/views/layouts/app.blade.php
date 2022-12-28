@@ -18,6 +18,10 @@
 
         <script src="{{ asset('js/app.js') }}" defer></script>
 
+        {{-- blade ui kit style --}}
+        @bukStyles(true)
+
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -46,5 +50,10 @@
         @stack('modals')
 
         @livewireScripts
+
+        {{-- blade ui kit script --}}
+        @bukScripts(true)
+
+
     </body>
 </html>

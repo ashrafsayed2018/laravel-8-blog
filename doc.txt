@@ -47,5 +47,10 @@
 - create PostController
 - post routes
 - post view
+- create our post view
+  - install blade-ui-kit
+  - add styles and scripts tags
+  - publish vendor files
+  - create fields in views
 
 
