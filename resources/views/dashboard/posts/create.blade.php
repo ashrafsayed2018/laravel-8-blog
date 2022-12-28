@@ -21,28 +21,53 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                <div class="p-4">
-                    <form action="{{ route("posts.store") }}" method="POST">
-                        @csrf
-                        {{-- title --}}
-                        <div>
-                            <x-jet-label for="title" value="{{ __('العنوان') }}" class="mb-4 text-gray-500" />
-                            <x-jet-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')"  autofocus autocomplete="title" />
-                            <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
-                            <x-jet-input-error for="title" class="mt-2" />
-                        </div>
+                    <x-form action="{{ route('posts.store') }}" has-files >
 
-                        {{-- body --}}
+                       <div class="space-y-6">
+                            {{-- cover image  --}}
+                            <div>
+                                <x-jet-label for="cover_image" value="{{ __('صورة الغلاف') }}" class="mb-4 text-gray-500" />
+                                <x-jet-input id="cover_image" class="block mt-1 w-full" type="file" name="cover_image" :value="old('cover_image')"  autofocus autocomplete="cover_image" />
+                                <span class="block text-xs text-red-700 mt-3">نوع الصوره يجب ان يكون jpg , png ,jpeg </span>
 
-                        <div class="mt-4">
-                            <x-jet-label for="body" value="{{ __('الوصف') }}" class="mb-4 text-gray-500" />
-                            <x-trix name="body" styling="" value=""></x-trix>
-                            <x-jet-input-error for="body" class="mt-2" />
-                        </div>
+                                <x-jet-input-error for="cover_image" class="mt-2" />
+
+                            </div>
+
+                            {{-- title --}}
+                            <div>
+                                <x-jet-label for="title" value="{{ __('العنوان') }}" class="mb-4 text-gray-500" />
+                                <x-jet-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')"  autofocus autocomplete="title" />
+                                <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
+                                <x-jet-input-error for="title" class="mt-2" />
+                            </div>
+
+                            {{-- body --}}
+
+                            <div>
+                                <x-jet-label for="body" value="{{ __('الوصف') }}" class="mb-4 text-gray-500" />
+                                <x-trix name="body" styling="overflow-y-scroll h-96" value=""></x-trix>
+                                <x-jet-input-error for="body" class="mt-2" />
+                            </div>
+
+                            {{-- schedule --}}
+
+                            <div>
+                                <x-pikaday name="published_at"  />
+                            </div>
+
+                            {{-- meta description --}}
+                            <div>
+                                <x-jet-label for="meta_description" value="{{ __('وصف الميتا') }}" class="mb-4 text-gray-500" />
+                                <x-trix name="meta_description" styling="overflow-y-scroll h-42" value=""></x-trix>
+                                <x-jet-input-error for="meta_description" class="mt-2" />
+                            </div>
+                       </div>
 
                         <x-jet-button class="ml-4 mt-6">
                             {{ __('حفظ') }}
                         </x-jet-button>
-                    </form>
+                    </x-form>
                </div>
             </div>
         </div>
