@@ -48,6 +48,17 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
         Route::put("{tag:slug}/update", [TagController::class, "update"])->name("update");
         Route::delete("{tag:slug}/delete", [TagController::class, "destroy"])->name("delete");
     });
+
+    // post routes
+
+    Route::group(["prefix" => "posts", "as" => "posts."], function () {
+        Route::get("/", [PostController::class, "index"])->name("index");
+        Route::get("create", [PostController::class, "create"])->name("create");
+        Route::post("/", [PostController::class, "store"])->name("store");
+        Route::get("{post:slug}/edit", [PostController::class, "edit"])->name("edit");
+        Route::put("{post:slug}/update", [PostController::class, "update"])->name("update");
+        Route::delete("{post:slug}/delete", [PostController::class, "destroy"])->name("delete");
+    });
 });
 
 // Route::middleware([
