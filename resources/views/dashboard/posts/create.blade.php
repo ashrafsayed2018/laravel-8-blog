@@ -41,6 +41,19 @@
                                 <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
                                 <x-jet-input-error for="title" class="mt-2" />
                             </div>
+                            {{-- category --}}
+                            <div>
+                                <x-jet-label for="category_id" value="{{ __('القسم') }}" class="mb-4 text-gray-500" />
+                                <select name="category_id" id="category_id" class="block w-full mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                                    <option value="">اختر القسم</option>
+
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">
+                                        {{ $category->name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
 
                             {{-- body --}}
 
@@ -63,6 +76,8 @@
                                 <x-jet-input-error for="meta_description" class="mt-2" />
                             </div>
                        </div>
+
+
 
                         <x-jet-button class="ml-4 mt-6">
                             {{ __('حفظ') }}
