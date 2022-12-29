@@ -18,15 +18,12 @@ class Index extends Component
 
     // search method
 
-    public static function searchPost($search)
-    {
-        return empty($search) ? static::query() : static::query()->where('title', "like", "%" . $search . "%")->orWhere("body", "like", "%" . $search . "%");
-    }
+
 
     public function render()
     {
         return view('livewire.posts.index', [
-            'posts' => Post::searchPost($this->search)->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')->paginate($this->perPage)
+            'posts' => Post::where('id', "like", "%" . $this->search . "%")->orWhere('title', "like", "%" . $this->search . "%")->orWhere("body", "like", "%" . $this->search . "%")->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')->paginate($this->perPage)
         ]);
     }
 }
