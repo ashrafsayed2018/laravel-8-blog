@@ -41,6 +41,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+        $post = new Post();
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        if ($request->hasFile("cover_image")) {
+            $post->cover_image = $request->cover_image;
+        }
+        $post->category_id = $request->category_id;
+        $post->tags = $request->tags;
+        $post->published_at = $request->published_at;
+        $post->meta_description = $request->meta_description;
     }
 
     /**
