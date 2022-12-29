@@ -14,7 +14,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'cover_image'  => $this->faker->imageUrl($width = 800, $height = 600),
+            'cover_image'  => "https://picsum.photos/1200/350?random=" . mt_rand(1, 55000),
             "title"        => $this->faker->sentence(),
             "slug"         => make_slug($this->faker->sentence()),
             "body"         => $this->faker->paragraph(6),
