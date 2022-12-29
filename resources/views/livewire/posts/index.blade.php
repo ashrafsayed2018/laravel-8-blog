@@ -78,12 +78,12 @@
                </thead>
                <tbody class="text-xs divide-y divide-gray-200 bg-indigo-50">
 
-                   <?php $i = 1; ?>
+
                    @foreach ($posts as $post)
                    <tr>
                        <td></td>
                        <td class="px-2 py-4 whitespace-nowrap">
-                           {{ $i++}}
+                           {{ $post->id}}
                        </td>
                        <td class="px-2 py-4 whitespace-nowrap">
                            {{ Str::limit($post->title,40,'...')}}
@@ -120,13 +120,14 @@
                                    </button>
                                </form>
                            </div>
-
-
                        </td>
                    </tr>
                    @endforeach
                </tbody>
              </table>
-
+             {{-- pagination --}}
+             <div class="p-2 bg-indigo-300">
+                {{ $posts->links() }}
+             </div>
     </div>
 </div>
