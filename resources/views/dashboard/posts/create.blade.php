@@ -41,6 +41,10 @@
                                 <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
                                 <x-jet-input-error for="title" class="mt-2" />
                             </div>
+
+                            {{-- tags --}}
+
+                             <x-tags :tags="$tags"></x-tags>
                             {{-- category --}}
                             <div>
                                 <x-jet-label for="category_id" value="{{ __('القسم') }}" class="mb-4 text-gray-500" />

@@ -26,7 +26,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-auto shadow-xl sm:rounded-lg">
                {{-- livewire table  --}}
-               livewire table
+               <livewire:posts.index />
             </div>
         </div>
     </div>

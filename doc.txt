@@ -53,4 +53,10 @@
   - publish vendor files
   - create fields in views
 
+- create livewire component for post/index
+- create methods in livewire post/index
+- create postseeder and userseeder
+- create livewire component for post/delete
+- create livewire component "togglebutton" for "feautured post"
+
 
