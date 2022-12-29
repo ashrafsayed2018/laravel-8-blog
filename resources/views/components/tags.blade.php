@@ -13,7 +13,7 @@
     }
 </style>
 <div>
-    <x-jet-label for="tags[]" value="{{ __('Tags') }}" />
+    <x-jet-label for="tags[]" value="{{ __('التاجات') }}" />
     <select x-cloak id="select" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
         @foreach ($tags as $tag )
         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
@@ -46,7 +46,7 @@
                             </div>
                         </template>
                         <div x-show="selected.length == 0" class="flex-1">
-                            <input placeholder="Select Tags" class="w-full h-full p-1 px-2 text-gray-800 bg-transparent outline-none appearance-none" x-bind:value="selectedValues()">
+                            <input placeholder="اختار تاجات" class="w-full h-full p-1 px-2 text-gray-800 bg-transparent outline-none appearance-none" x-bind:value="selectedValues()">
                         </div>
                     </div>
                     <div class="flex items-center w-8 py-1 pl-2 pr-1 text-gray-300 border-l border-gray-200 svelte-1l8159u">

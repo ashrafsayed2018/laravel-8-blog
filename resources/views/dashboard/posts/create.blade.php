@@ -71,6 +71,7 @@
 
                             <div>
                                 <x-pikaday name="published_at"  />
+                                <x-jet-input-error for="published_at" class="mt-2" />
                             </div>
 
                             {{-- meta description --}}
