@@ -16,6 +16,13 @@ class Index extends Component
     public $perPage = 10;
 
 
+    // search method
+
+    public static function searchPost($search)
+    {
+        return empty($search) ? static::query() : static::query()->where('title', "like", "%" . $search . "%")->orWhere("body", "like", "%" . $search . "%");
+    }
+
     public function render()
     {
         return view('livewire.posts.index', [
