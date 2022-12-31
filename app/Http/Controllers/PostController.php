@@ -40,12 +40,10 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-
-
-
         $post                   = new Post();
+        $post->user_id          = auth()->id();
         $post->title            = $request->title;
         $post->slug             = make_slug($request->title);
         $post->body             = $request->body;
@@ -63,7 +61,7 @@ class PostController extends Controller
             $fileExtension      = time() . "." . $imageNewName . "." . $image->getClientOriginalExtension();
 
             // image location
-            $location           = storage_path("images/" . $fileExtension);
+            $location           = storage_path("app/public/images/" . $fileExtension);
             // resize the image and save it in file path
             Image::make($image)->resize(1200, 630)->save($location);
 
@@ -71,9 +69,12 @@ class PostController extends Controller
             $post->cover_image      = $fileExtension;
         }
         // save the post
-
         $post->save();
-        $post->sync($tags);
+        $post->tags()->sync($tags);
+
+        if ($post->save()) {
+            return redirect()->route("posts.index")->with("success", "تم اضافة المقال بنجاح");
+        }
     }
 
     /**

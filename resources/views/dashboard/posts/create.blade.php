@@ -70,7 +70,7 @@
                             {{-- schedule --}}
 
                             <div>
-                                <x-pikaday name="published_at"  />
+                                <x-pikaday name="published_at" format="YYYY-MM-DD"  />
                                 <x-jet-input-error for="published_at" class="mt-2" />
                             </div>
 
