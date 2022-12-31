@@ -44,7 +44,7 @@
 
                             {{-- tags --}}
 
-                             <x-tags :tags="$tags"></x-tags>
+                             {{-- <x-tags :tags="$tags"></x-tags> --}}
                             {{-- category --}}
                             <div>
                                 <x-jet-label for="category_id" value="{{ __('القسم') }}" class="mb-4 text-gray-500" />
