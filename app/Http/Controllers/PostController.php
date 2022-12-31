@@ -74,8 +74,6 @@ class PostController extends Controller
 
         $post->save();
         $post->sync($tags);
-
-        return redirect()->route("post.index")->with("success", "تم اضافة المقال بنجاح");
     }
 
     /**
