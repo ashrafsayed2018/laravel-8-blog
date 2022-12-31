@@ -45,6 +45,17 @@
                             {{-- tags --}}
 
                              {{-- <x-tags :tags="$tags"></x-tags> --}}
+
+                             <div>
+                                <x-jet-label for="tags" value="{{ __('التاجات') }}" class="mb-4 text-gray-500" />
+                                <select name="tags[]" id="tags" multiple
+                                x-data="{}"
+                                x-init="function() {choices($el)}">
+                                    @foreach ($tags as $tag)
+                                       <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
+                             </div>
                             {{-- category --}}
                             <div>
                                 <x-jet-label for="category_id" value="{{ __('القسم') }}" class="mb-4 text-gray-500" />
