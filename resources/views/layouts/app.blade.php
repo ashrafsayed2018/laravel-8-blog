@@ -19,7 +19,7 @@
 
 
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
+
 
         {{-- blade ui kit style --}}
         @bukStyles(true)
@@ -54,6 +54,7 @@
         {{-- blade ui kit script --}}
         @bukScripts(true)
         @livewireScripts
+        <script src="{{ asset('js/app.js') }}" defer></script>
 
 
 

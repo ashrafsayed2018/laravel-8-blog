@@ -48,7 +48,6 @@ class PostController extends Controller
         $post->slug             = make_slug($request->title);
         $post->body             = $request->body;
         $post->category_id      = $request->category_id;
-        $tags                   = explode(',', $request->tags);
         $post->published_at     = $request->published_at;
         $post->meta_description = $request->meta_description;
 
@@ -70,7 +69,7 @@ class PostController extends Controller
         }
         // save the post
         $post->save();
-        $post->tags()->sync($tags);
+        $post->tags()->sync($request->tags);
 
         if ($post->save()) {
             return redirect()->route("posts.index")->with("success", "تم اضافة المقال بنجاح");
