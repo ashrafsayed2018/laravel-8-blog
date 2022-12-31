@@ -24,8 +24,8 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            "cover_image"      => ['required', 'mimetypes:png,jpg,jpeg,svg,webp', 'max:2048'],
-            'title'            => ['required', 'min:5', "max:50", 'unique:posts'],
+            "cover_image"         => ['required_if:can_upload_file,true', 'nullable', 'mimes:jpeg,jpg,png', 'max:5120'],
+            'title'               => ['required', 'min:5', "max:50", 'unique:posts'],
             'body'             => ['required', 'min:5', "max:500", 'unique:posts'],
             "category_id"      => ['required', 'numeric'],
             "tags"             => ['required'],

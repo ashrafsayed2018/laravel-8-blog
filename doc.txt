@@ -59,4 +59,9 @@
 - create livewire component for post/delete
 - create livewire component "togglebutton" for "feautured post"
 
+- post store method in PostController
+- install intervention image
+- create symlink for storage
+- add test
+
 
