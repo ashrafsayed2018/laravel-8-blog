@@ -47,7 +47,7 @@
                              {{-- <x-tags :tags="$tags"></x-tags> --}}
 
                              <div>
-                                <x-jet-label for="tags" value="{{ __('التاجات') }}" class="mb-4 text-gray-500" />
+                                <x-jet-label for="tags" value="{{ __('اختار التاجات') }}" class="mb-4 text-gray-500" />
                                 <select name="tags[]" id="tags" multiple
                                 x-data="{}"
                                 x-init="function() {choices($el)}">
