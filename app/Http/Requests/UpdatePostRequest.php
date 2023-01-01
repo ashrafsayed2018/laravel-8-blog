@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
+class UpdatePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,10 @@ class StorePostRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
-            "cover_image"         => ['required_if:can_upload_file,true', 'nullable', 'mimes:jpeg,jpg,png', 'max:5120'],
-            'title'               => ['required', 'min:5', "max:50", 'unique:posts,title'],
-            'body'             => ['required', 'min:5', "max:500", 'unique:posts'],
+            "cover_image"         => ['sometimes', 'nullable', 'mimes:jpeg,jpg,png', 'max:5120'],
+            'title'               => ['required', 'min:5', "max:50", 'unique:posts,title,' . $this->post->id],
+            'body'             => ['required', 'min:5', "max:500", 'unique:posts,body,' . $this->post->id],
             "category_id"      => ['required', 'numeric'],
             "tags"             => ['required'],
             "published_at"     => ['required'],

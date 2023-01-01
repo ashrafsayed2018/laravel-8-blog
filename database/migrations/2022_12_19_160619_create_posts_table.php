@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string("title");
             $table->string("slug");
-            $table->string("cover_image");
+            $table->string("cover_image")->nullable();
             $table->longText("body");
             $table->text("meta_description")->nullable();
             $table->timestamp("published_at")->nullable();
