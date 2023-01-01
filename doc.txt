@@ -64,5 +64,8 @@
 - create symlink for storage
 - add test
 
-
 - change our multi select for tags to choice.js
+
+- edit post
+- update post in PostController
+- test

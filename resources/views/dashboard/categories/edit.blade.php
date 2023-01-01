@@ -34,9 +34,7 @@
                             <select name="parent_id" class="w-full mb-6 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                 <option value="">اختر القسم الرئيسي</option>
                                 @foreach ($categories as $cat)
-
-
-                                <option value="{{ $cat->id }}" {{ $category->parent_id == $cat->id ? 'selected' : '' }} >{{ $cat->name }}</option>
+                                  <option value="{{ $cat->id }}" {{ $category->parent_id == $cat->id ? 'selected' : '' }} >{{ $cat->name }}</option>
                                 @endforeach
                             </select>
                          </div>

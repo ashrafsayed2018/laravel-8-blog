@@ -95,7 +95,13 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+
+        return view("dashboard.posts.edit", [
+            'post' => $post,
+            "categories" => Category::all(),
+            'tags' => Tag::all(),
+            'postTags' => $post->tags->pluck("id")->toArray()
+        ]);
     }
 
     /**
