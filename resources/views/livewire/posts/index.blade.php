@@ -1,12 +1,8 @@
 <div class="max-w-7xl mx-auto">
     <div class="bg-white overflow-auto shadow-xl sm:rounded-lg">
-
             {{-- main heading --}}
-
             <div class="w-full flex  space-x-2">
-
                 {{-- search box --}}
-
                 <div class="w-1/2 relative">
                     <span class="absolute z-10 left-4 items-center justify-center w-8 h-full py-3 pr-3 text-base font-normal leading-snug text-center text-gray-400 bg-transparent rounded">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

@@ -139,11 +139,15 @@ class PostController extends Controller
             // resize the image and save it in file path
             Image::make($image)->resize(1200, 630)->save($location);
 
-            // save the image in db
-
             // first delete the old image
-            Storage::disk('public')->delete($post->cover_image);
-            $post->cover_image      = $fileExtension;
+            $oldImageDestination = "storage/images/" . $post->cover_image;
+            if (File::exists($oldImageDestination)) {
+                File::delete($oldImageDestination);
+            }
+
+            // save the new image to db
+
+            $post->cover_image = $fileExtension;
         }
         // save the post
         $post->save();

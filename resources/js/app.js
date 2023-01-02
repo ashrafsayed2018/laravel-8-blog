@@ -1,11 +1,9 @@
 import './bootstrap';
 
-import Alpine from 'alpinejs';
-require('alpinejs');
+// import Alpine from 'alpinejs';
+// require('alpinejs');
 // window.Alpine = Alpine;
-
-
-Alpine.start();
+// Alpine.start();
 import Choices from "choices.js";
 
 // create multi-select element
