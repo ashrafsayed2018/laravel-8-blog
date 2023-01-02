@@ -23,14 +23,16 @@ class UpdatePostRequest extends FormRequest
      */
     public function rules()
     {
+
+
         return [
             "cover_image"         => ['sometimes', 'nullable', 'mimes:jpeg,jpg,png', 'max:5120'],
             'title'               => ['required', 'min:5', "max:50", 'unique:posts,title,' . $this->post->id],
-            'body'             => ['required', 'min:5', "max:500", 'unique:posts,body,' . $this->post->id],
-            "category_id"      => ['required', 'numeric'],
-            "tags"             => ['required'],
-            "published_at"     => ['required'],
-            "meta_description" => ['required', 'min:5']
+            'body'                => ['required', 'min:5', "max:500", 'unique:posts,body,' . $this->post->id],
+            "category_id"         => ['required', 'numeric'],
+            "tags"                => ['required'],
+            "published_at"        => ['required'],
+            "meta_description"    => ['required', 'min:5']
         ];
     }
 }

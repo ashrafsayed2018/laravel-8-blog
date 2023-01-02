@@ -92,7 +92,7 @@
                            {{ Str::limit($post->title,40,'...')}}
                        </td>
                        <td class="px-2 py-4 whitespace-nowrap">
-                           <img src="{{ $post->cover_image }}" alt="{{ $post->cover_image }}" title="{{ $post->cover_image }}" class="w-20 h-20 object-cover">
+                           <img src="{{ asset('storage/images/'.$post->cover_image) }}" alt="{{ $post->cover_image }}" title="{{ $post->cover_image }}" class="w-20 h-20 object-cover">
                        </td>
                        <td class="px-2 py-4 whitespace-nowrap">
                          {{ $post->category->name }}
