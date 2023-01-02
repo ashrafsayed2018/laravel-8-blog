@@ -69,3 +69,5 @@
 - edit post
 - update post in PostController
 - test
+
+- delete post changes

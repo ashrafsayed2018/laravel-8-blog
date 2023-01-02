@@ -1273,14 +1273,20 @@ select {
 .h-20 {
   height: 5rem;
 }
+.h-40 {
+  height: 10rem;
+}
+.h-96 {
+  height: 24rem;
+}
 .h-full {
   height: 100%;
 }
 .h-1 {
   height: 0.25rem;
 }
-.h-96 {
-  height: 24rem;
+.h-80 {
+  height: 20rem;
 }
 .min-h-screen {
   min-height: 100vh;

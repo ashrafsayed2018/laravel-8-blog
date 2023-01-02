@@ -21,6 +21,10 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                <div class="p-4">
+
+                    {{-- post image --}}
+
+                    <img src="{{ asset("storage/images/".$post->cover_image) }}" class="block w-full h-80 object-cover" alt="{{ $post->title }}">
                     <x-form method="put" action="{{ route('posts.update',$post) }}" has-files >
                        <div class="space-y-6">
                             {{-- cover image  --}}
