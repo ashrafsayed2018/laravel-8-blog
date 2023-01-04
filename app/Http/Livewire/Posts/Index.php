@@ -16,9 +16,9 @@ class Index extends Component
     public $perPage = 10;
 
 
-    // search method
+    // listener when the delete post
 
-
+    protected $listeners = ['refreshPostsWhenPostDelete' => '$refresh'];
 
     public function render()
     {

@@ -17,8 +17,9 @@
         <!-- Scripts -->
         {{-- <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script> --}}
 
-
-
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+       {{-- sweet alert --}}
+       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
         {{-- blade ui kit style --}}
@@ -56,9 +57,7 @@
         @livewireScripts
         <script src="{{ asset('js/app.js') }}" defer></script>
 
-
-
-
+        @stack('scripts')
 
     </body>
 </html>

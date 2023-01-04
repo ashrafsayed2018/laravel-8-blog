@@ -41,11 +41,7 @@
                                 <span class="block text-xs text-red-700 mt-3">اقصي عدد لحروف 50 حرف </span>
                                 <x-jet-input-error for="title" class="mt-2" />
                             </div>
-
                             {{-- tags --}}
-
-                             {{-- <x-tags :tags="$tags"></x-tags> --}}
-
                              <div>
                                 <x-jet-label for="tags" value="{{ __('اختار التاجات') }}" class="mb-4 text-gray-500" />
                                 <select name="tags[]" id="tags" multiple
@@ -81,7 +77,7 @@
                             {{-- schedule --}}
 
                             <div>
-                                <x-pikaday name="published_at" format="YYYY-MM-DD"  />
+                                <x-pikaday name="published_at" format="YYYY-MM-DD" autocomplete="off" />
                                 <x-jet-input-error for="published_at" class="mt-2" />
                             </div>
 

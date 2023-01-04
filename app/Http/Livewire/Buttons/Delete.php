@@ -10,21 +10,31 @@ class Delete extends Component
 {
 
     public Post $post;
-    public bool $confirmDeletion = false;
 
-    public function confirmPostDeletion()
+    protected $listeners = ['deleteConfirmed' => "deletePost"];
+
+    public function deleteConfirmation()
     {
-        $this->resetErrorBag();
-        $this->dispatchBrowserEvent('confirming-delete-post');
-        $this->confirmDeletion = true;
+
+
+        $this->dispatchBrowserEvent("show-delete-confirmation");
     }
 
     public function deletePost()
     {
-        File::delete(public_path("image/blog/" . $this->post->cover_image));
+        $oldImageDestination = "storage/images/" . $this->post->cover_image;
+        if (File::exists($oldImageDestination)) {
+            File::delete($oldImageDestination);
+        }
         $this->post->delete();
-        return redirect()->route('posts.index')->with("sucess", "تم حذف المقال بنجاح");
+
+        $this->dispatchBrowserEvent("postDeleted");
+
+        $this->emit("refreshPostsWhenPostDelete");
     }
+
+
+
     public function render()
     {
         return view('livewire.buttons.delete');
