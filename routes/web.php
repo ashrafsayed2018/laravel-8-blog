@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\DashboardController;
 // home route
 
 Route::get('/', [HomeController::class, "index"])->name("home");
+Route::get('/blog', [BlogController::class, "index"])->name("blog");
 
 // dashboard route  with auth middleware and prefix
 Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
