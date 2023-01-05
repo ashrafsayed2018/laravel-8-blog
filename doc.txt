@@ -76,3 +76,5 @@
 - creating blog controller and route
 - add blog link in navigation menu
 - create single post component (feautured posts)
+
+- use livewire for our blog index view
