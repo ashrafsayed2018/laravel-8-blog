@@ -71,3 +71,8 @@
 - test
 
 - delete post changes
+
+- fixing navigation bar for landing page (javascript)
+- creating blog controller and route
+- add blog link in navigation menu
+- create single post component (feautured posts)
