@@ -23,7 +23,7 @@ class ShowPost extends Component
         return Category::where("id", $category)->exists();
     }
 
-    // valid sort
+    // method to check if valid sort
 
     public function validSort($sort): bool
     {
@@ -33,6 +33,7 @@ class ShowPost extends Component
         ]);
     }
 
+    // method update sort by property
     public function sortBy($sort): void
     {
         $this->sortBy = $this->validSort($sort) ? $sort : 'recentDesc';
@@ -60,7 +61,7 @@ class ShowPost extends Component
 
         return view('livewire.posts.show-post', [
             'categories'       => $categories,
-            'posts'            => $posts->paginate(10),
+            'posts'            => $posts->paginate(1),
             'selectedCategory' => $this->category,
             "selectedSortedBy" => $this->sortBy
         ]);
