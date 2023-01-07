@@ -3,7 +3,7 @@
     <div class="col-span-3">
         @foreach ($posts as $post)
           <div class="bg-indigo">
-              posts
+              {{ $post->title }}
           </div>
         @endforeach
     </div>

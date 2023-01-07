@@ -17,11 +17,52 @@ class ShowPost extends Component
         'category' => ['except' => ''],
         'sortBy'   => ['except' => 'recentdesc']
     ];
+
+    public function categoryExists($category): bool
+    {
+        return Category::where("id", $category)->exists();
+    }
+
+    // valid sort
+
+    public function validSort($sort): bool
+    {
+        return in_array($sort, [
+            'recentAsc',
+            "recentDesc"
+        ]);
+    }
+
+    public function sortBy($sort): void
+    {
+        $this->sortBy = $this->validSort($sort) ? $sort : 'recentDesc';
+    }
+
+    // toggle category function
+
+    public function toggleCategory($category): void
+    {
+
+        $this->category = $this->category != $category && $this->categoryExists($category) ? $category : null;
+    }
     public function render()
     {
 
         $categories = Category::all();
-        $posts      = Post::all();
-        return view('livewire.posts.show-post');
+        $posts      = Post::published();
+
+        if ($this->category) {
+            $posts->category($this->category);
+        }
+        $posts->{$this->sortBy}();
+
+
+
+        return view('livewire.posts.show-post', [
+            'categories'       => $categories,
+            'posts'            => $posts->paginate(10),
+            'selectedCategory' => $this->category,
+            "selectedSortedBy" => $this->sortBy
+        ]);
     }
 }
