@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->text("meta_description")->nullable();
             $table->timestamp("published_at")->nullable();
             $table->boolean("featured")->default(0);
-
+            $table->integer("views")->default(0);
             $table->foreignId("user_id")->constrained("users");
             $table->foreignId("category_id")->constrained("categories")->onDelete("cascade");
 
