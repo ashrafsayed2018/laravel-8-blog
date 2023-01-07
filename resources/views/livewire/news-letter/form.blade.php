@@ -1,7 +1,8 @@
 <div class="mb-4">
-    <x-ui.alerts />
+
     <form wire:submit.prevent="formSubmit">
       <div class="container max-w-xl mx-auto space-y-4 text-right">
+        <x-ui.alerts />
               {{-- name --}}
               <div >
                 <x-jet-label for="name" value="{{ __('الاسم') }}" class="mb-4 font-bold text-white" />
@@ -13,8 +14,6 @@
                 <x-jet-label for="email" value="{{ __('الايميل') }}" class="mb-4 font-bold text-white" />
                 <x-jet-input email="email" wire:model="email" id="email" class="block mt-1 w-full" type="text" />
                 <x-jet-input-error for="email" class="mt-2" />
-
-                {{ $email }}
             </div>
          {{-- submit button --}}
          <div>
