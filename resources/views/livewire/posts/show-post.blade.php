@@ -58,7 +58,6 @@
         @foreach ($posts as $post)
         <div class="bg-indigo-400">
             <x-blog.post :post="$post" />
-
          </div>
         @endforeach
         {{-- pagination  --}}

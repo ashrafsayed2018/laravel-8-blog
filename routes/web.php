@@ -23,6 +23,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class, "index"])->name("home");
 Route::get('/blog', [BlogController::class, "index"])->name("blog");
+Route::get('/{post:slug}', [BlogController::class, "show"])->name("blog.show");
 
 // dashboard route  with auth middleware and prefix
 Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
@@ -60,7 +61,6 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
         Route::post("/", [PostController::class, "store"])->name("store");
         Route::get("{post:slug}/edit", [PostController::class, "edit"])->name("edit");
         Route::put("{post:slug}/update", [PostController::class, "update"])->name("update");
-        Route::get("{post:slug}", [PostController::class, "show"])->name("show");
         Route::delete("{post:slug}/delete", [PostController::class, "destroy"])->name("delete");
     });
 });

@@ -14,7 +14,7 @@ class BlogController extends Controller
         return view("pages.blog.index");
     }
 
-    public function show(Post $psot)
+    public function show(Post $post)
     {
         return view("pages.blog.show", compact("post"));
     }
