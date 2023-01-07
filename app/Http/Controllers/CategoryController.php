@@ -22,6 +22,14 @@ class CategoryController extends Controller
         ]);
     }
 
+    // return subCategories
+    public function subCategories()
+    {
+        return view("dashboard.categories.sub-categories", [
+            "categories" => Category::with("subCategories")->whereNotNull("parent_id")->get()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -102,9 +110,5 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('categories.index')->with("success", "تم حذف القسم بنجاح");
-    }
-
-    public function subCategories()
-    {
     }
 }

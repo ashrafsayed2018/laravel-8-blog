@@ -23,6 +23,13 @@
                         {{ __('الاقسام') }}
                     </x-jet-nav-link>
                 </div>
+
+                {{-- categories link  --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('categories.subCategories') }}" :active="request()->routeIs('categories.subCategories')">
+                        {{ __(' الاقسام الفرعيه') }}
+                    </x-jet-nav-link>
+                </div>
                 {{-- tags link  --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.index')">
