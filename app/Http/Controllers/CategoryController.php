@@ -103,4 +103,8 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')->with("success", "تم حذف القسم بنجاح");
     }
+
+    public function subCategories()
+    {
+    }
 }

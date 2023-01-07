@@ -96,3 +96,6 @@
 
 - create our show view for our posts
 - timezone
+
+
+- editing sub categories

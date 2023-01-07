@@ -23,7 +23,6 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class, "index"])->name("home");
 Route::get('/blog', [BlogController::class, "index"])->name("blog");
-Route::get('/{post:slug}', [BlogController::class, "show"])->name("blog.show");
 
 // dashboard route  with auth middleware and prefix
 Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
@@ -31,10 +30,11 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
     Route::group(['prefix' => '', 'as' => 'dashboard.'], function () {
         Route::get('/', [DashboardController::class, "index"])->name('index');
     });
-
     // categories route
     Route::group(["prefix" => "categories", "as" => "categories."], function () {
         Route::get("/", [CategoryController::class, "index"])->name("index");
+        // route for subcategories
+        Route::get("/sub-categories", [CategoryController::class, "subCategories"])->name("subCategories");
         Route::get("create", [CategoryController::class, "create"])->name("create");
         Route::post("/", [CategoryController::class, "store"])->name("store");
         Route::get("{category:slug}/edit", [CategoryController::class, "edit"])->name("edit");
@@ -61,6 +61,7 @@ Route::group(["middleware" => "auth", "prefix" => "dashboard"], function () {
         Route::post("/", [PostController::class, "store"])->name("store");
         Route::get("{post:slug}/edit", [PostController::class, "edit"])->name("edit");
         Route::put("{post:slug}/update", [PostController::class, "update"])->name("update");
+        Route::get("{post:slug}", [PostController::class, "show"])->name("show");
         Route::delete("{post:slug}/delete", [PostController::class, "destroy"])->name("delete");
     });
 });
