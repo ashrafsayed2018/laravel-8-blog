@@ -93,3 +93,6 @@
 
 
 - create feautured livewire component
+
+- create our show view for our posts
+- timezone
