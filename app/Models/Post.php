@@ -38,6 +38,8 @@ class Post extends Model
         return $query->where('category_id', $category);
     }
 
+
+
     // create scopt of featured posts
     public function scopeFeatured(Builder $query): Builder
     {

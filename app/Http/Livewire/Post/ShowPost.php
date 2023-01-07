@@ -61,7 +61,7 @@ class ShowPost extends Component
 
         return view('livewire.posts.show-post', [
             'categories'       => $categories,
-            'posts'            => $posts->paginate(1),
+            'posts'            => $posts->paginate(10),
             'selectedCategory' => $this->category,
             "selectedSortedBy" => $this->sortBy
         ]);
