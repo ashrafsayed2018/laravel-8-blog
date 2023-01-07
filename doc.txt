@@ -77,4 +77,16 @@
 - add blog link in navigation menu
 - create single post component (feautured posts)
 
+
 - use livewire for our blog index view
+
+
+
+- create livewire newsletter form component
+- install spatie/newsletter for mailchimp
+- register with mailchimp
+- setup mailchimp apis and audience keys
+- create subscriber mailable
+- setup mailtrap.io details in env file
+- setup methods in livewire form component
+- test it !!!
