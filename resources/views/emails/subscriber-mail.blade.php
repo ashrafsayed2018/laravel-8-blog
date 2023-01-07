@@ -1,5 +1,5 @@
 @component('mail::message')
-# Introduction
+# Thank you for subscribing
 
 The body of your message.
 
