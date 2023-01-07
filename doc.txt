@@ -90,3 +90,6 @@
 - setup mailtrap.io details in env file
 - setup methods in livewire form component
 - test it !!!
+
+
+- create feautured livewire component

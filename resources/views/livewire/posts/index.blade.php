@@ -94,7 +94,7 @@
                          {{ $post->category->name }}
                        </td>
                        <td class="px-2 py-4 whitespace-nowrap">
-                          مميز
+                          <livewire:buttons.featured />
                        </td>
                        <td class="px-2 py-4 whitespace-nowrap">
                            {{ $post->created_at->format("d/m/y") }}
